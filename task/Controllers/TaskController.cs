@@ -14,7 +14,7 @@ namespace task.Controllers
         {
             return View();
         }
-        [HttpGet]
+   
         public JsonResult Get_AllTask()
         {
             using (TaskEntities1 Obj = new TaskEntities1())
