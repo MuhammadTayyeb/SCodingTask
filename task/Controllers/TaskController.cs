@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,16 +19,17 @@ namespace task.Controllers
         {
             using (TaskEntities1 Obj = new TaskEntities1())
             {
-                List<Task> Emp = Obj.Tasks.ToList();
-                return Json(Emp, JsonRequestBehavior.AllowGet);
+                List<Task> task= Obj.Tasks.ToList();
+                return Json(task, JsonRequestBehavior.AllowGet);
             }
         }
+
         public JsonResult Get_TaskById(string Id)
         {
             using (TaskEntities1 Obj = new TaskEntities1())
             {
-                int EmpId = int.Parse(Id);
-                return Json(Obj.Tasks.Find(EmpId), JsonRequestBehavior.AllowGet);
+                int tId = int.Parse(Id);
+                return Json(Obj.Tasks.Find(tId), JsonRequestBehavior.AllowGet);
             }
         }
         public string Insert_task(Task task)
